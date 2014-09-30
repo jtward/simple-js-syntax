@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>comment</key>
-	<string>JavaScript Syntax: version 2.0 (simplified)</string>
+	<string>Simpler JavaScript syntax</string>
 	<key>fileTypes</key>
 	<array>
 		<string>js</string>
@@ -19,7 +19,7 @@
 	<key>keyEquivalent</key>
 	<string>^~J</string>
 	<key>name</key>
-	<string>JavaScript</string>
+	<string>simplejs</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -149,54 +149,12 @@
 			<key>name</key>
 			<string>comment.line.double-slash.js</string>
 		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.html.js</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.comment.html.js</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(&lt;!--|--&gt;)</string>
-			<key>name</key>
-			<string>comment.block.html.js</string>
-		</dict>
+
 		<dict>
 			<key>match</key>
-			<string>\b(boolean|byte|char|class|double|enum|float|function|int|interface|long|short|void)\b</string>
+			<string>\b(break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|function|if|implements|import|in|instanceof|interface|let|new|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b</string>
 			<key>name</key>
-			<string>storage.type.js</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(abstract|const|export|extends|final|implements|native|private|protected|public|static|synchronized|throws|transient|volatile)\b</string>
-			<key>name</key>
-			<string>storage.modifier.js</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(break|case|catch|continue|default|do|else|finally|for|goto|if|import|package|return|switch|throw|try|while)\b</string>
-			<key>name</key>
-			<string>keyword.control.js</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(comment|debugger|label|super)\b</string>
-			<key>name</key>
-			<string>keyword.other.js</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(delete|in|instanceof|new|typeof|with)\b</string>
-			<key>name</key>
-			<string>keyword.operator.js</string>
+			<string>keyword.js</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -224,37 +182,10 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(in|instanceof|new|delete|typeof|void)\b</string>
-			<key>name</key>
-			<string>keyword.operator.js</string>
-		</dict>
-		<dict>
-			<key>match</key>
 			<string>\b(Infinity|NaN|undefined)\b</string>
 			<key>name</key>
 			<string>constant.language.js</string>
 		</dict>
-
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.js</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>variable.language.js</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>\b(var)\s*\b(.*?)\b\s*[=;]</string>
-			<key>name</key>
-			<string>variabledec.js</string>
-		</dict>
-
 		<dict>
 			<key>begin</key>
 			<string>(?&lt;=[=(:]|^|return|&amp;&amp;|\|\||!)\s*(/)(?![/*+{}?])</string>
@@ -327,8 +258,8 @@
 
 	</array>
 	<key>scopeName</key>
-	<string>source.js</string>
+	<string>source.simplejs</string>
 	<key>uuid</key>
-	<string>93E017CC-6F27-11D9-90EB-000D93589AF6</string>
+	<string>03cad500-489c-11e4-916c-0800200c9a66</string>
 </dict>
 </plist>
