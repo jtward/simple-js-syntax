@@ -7,6 +7,8 @@
 	<key>fileTypes</key>
 	<array>
 		<string>js</string>
+		<string>json</string>
+		<string>coffee</string>
 		<string>htc</string>
 		<string>jsx</string>
 	</array>
@@ -136,6 +138,22 @@
 			<string>comment.block.js</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>###</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.comment.js</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>###</string>
+			<key>name</key>
+			<string>comment.block.documentation.js</string>
+		</dict>
+		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -145,14 +163,15 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(//).*$\n?</string>
+			<string>(//|#).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.double-slash.js</string>
 		</dict>
 
 		<dict>
 			<key>match</key>
-			<string>\b(break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|function|if|implements|import|in|instanceof|interface|let|new|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b</string>
+			<!-- backreference for . ensures that methods named keywords aren't highlighted -->
+			<string>(?&lt;!\.)\b(and|arguments|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|function|if|implements|import|in|instanceof|interface|is|isnt|let|new|not|of|or|package|private|protected|public|return|static|super|switch|then|this|throw|try|typeof|unless|var|void|when|while|with|yield)\b|->|=>|@</string>
 			<key>name</key>
 			<string>keyword.js</string>
 		</dict>
@@ -164,7 +183,19 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>\byes\b</string>
+			<key>name</key>
+			<string>constant.language.boolean.true.js</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>\bfalse\b</string>
+			<key>name</key>
+			<string>constant.language.boolean.false.js</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\bno\b</string>
 			<key>name</key>
 			<string>constant.language.boolean.false.js</string>
 		</dict>
@@ -188,7 +219,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?&lt;=[=(:]|^|return|&amp;&amp;|\|\||!)\s*(/)(?![/*+{}?])</string>
+			<string>(/)(?![/=\s])</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -198,7 +229,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(/)[igm]*</string>
+			<string>(/)[igmy]*</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
@@ -259,7 +290,5 @@
 	</array>
 	<key>scopeName</key>
 	<string>source.js</string>
-	<key>uuid</key>
-	<string>03cad500-489c-11e4-916c-0800200c9a66</string>
 </dict>
 </plist>
